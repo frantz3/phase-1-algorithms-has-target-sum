@@ -1,6 +1,24 @@
+// Create an array of integers.
+
+
 function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
+  let results = [];
+  let history = {};
+
+  array.forEach((current) => {
+    const remainder = target - current;
+    if(current in history) {
+      results.push([current,remainder])
+    };
+    history[remainder] = true;
+  });
+};
+
+return results;
+
+
+
+
 
 /* 
   Write the Big O time complexity of your function here
@@ -8,6 +26,7 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  write a function that iterates through an array and finds the
 */
 
 /*
